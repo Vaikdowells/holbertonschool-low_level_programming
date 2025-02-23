@@ -9,7 +9,7 @@ void jack_bauer(void)
 
 	for (hour = 0; hour < 24; hour++)  /* Loop through each hour (00 to 23) */
 	{
-		for (minute = 0; minute < 60; minute++)  /* Loop through each minute (00 to 59) */
+		for (minute = 0; minute < 60; minute++)
 		{
 			_putchar(hour / 10 + '0');  /* Print the first digit of the hour */
 			_putchar(hour % 10 + '0');  /* Print the second digit of the hour */

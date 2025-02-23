@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * times_table - Prints the 9 times table, starting from 0
@@ -15,12 +14,24 @@ void times_table(void)
             result = i * j;
 
             /* Print the result with appropriate spacing */
-            if (j == 0)
-                printf("%2d", result);  /* Print the first number in each row */
+            if (result < 10)
+            {
+                _putchar(' ');  /* Add a space before single digit numbers */
+                _putchar(result + '0');  /* Convert int to char and print */
+            }
             else
-                printf(", %3d", result);  /* Print subsequent numbers with proper spacing */
+            {
+                _putchar(result / 10 + '0');  /* Print the tens digit */
+                _putchar(result % 10 + '0');  /* Print the ones digit */
+            }
+
+            if (j < 9)
+            {
+                _putchar(',');  /* Print comma */
+                _putchar(' ');  /* Print space after comma */
+            }
         }
-        printf("\n");  /* New line after each row */
+        _putchar('\n');  /* New line after each row */
     }
 }
 
