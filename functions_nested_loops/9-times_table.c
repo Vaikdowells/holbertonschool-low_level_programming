@@ -1,34 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * times_table - Prints the 9 times table, starting with 0
+ * times_table - Prints the 9 times table, starting from 0
  */
 void times_table(void)
 {
-	int row, col, product;
+    int i, j, result;
 
-	for (row = 0; row < 10; row++)  /* Loop for each row (0 to 9) */
-	{
-		for (col = 0; col < 10; col++)  /* Loop for each column (0 to 9) */
-		{
-			product = row * col;  /* Multiply row by column */
-			if (col == 0)
-			{
-				_putchar(product + '0');  /* Print first number (no space before it) */
-			}
-			else
-			{
-				_putchar(',');  /* Print a comma */
-				_putchar(' ');  /* Print a space after the comma */
-				if (product < 10)
-				{
-					_putchar(' ');  /* Print extra space for single-digit results */
-				}
-				_putchar(product + '0');  /* Print the product */
-			}
-		}
-		_putchar('\n');  /* Move to the next line after each row */
-	}
+    for (i = 0; i < 10; i++)  /* Loop through rows (0 to 9) */
+    {
+        for (j = 0; j < 10; j++)  /* Loop through columns (0 to 9) */
+        {
+            result = i * j;
+
+            /* Print the result with appropriate spacing */
+            if (j == 0)
+                printf("%2d", result);  /* Print the first number in each row */
+            else
+                printf(", %3d", result);  /* Print subsequent numbers with proper spacing */
+        }
+        printf("\n");  /* New line after each row */
+    }
 }
-
 
